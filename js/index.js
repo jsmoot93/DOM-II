@@ -20,13 +20,13 @@ btn3.addEventListener('click', function(eventObject){
 const navi = document.querySelector('.logo-heading');
 navi.addEventListener('wheel', function(eventObject){
  console.log(`fun is elastic!`);
-  TweenMax.to(".logo-heading", 2, {x: 100, ease: Elastic.easeOut.config(1.1, 0.4)});
+  TweenMax.to(".logo-heading", 1, {rotationX: 360});
 });
 
 const intro = document.querySelector('.intro h2');
-intro.addEventListener('copy', function(eventObject){
- console.log(`intro falls elasticly`);
-  TweenMax.to(".intro h2", 2, {y: 100, ease: Elastic.easeOut.config(1.1, 0.4)});
+intro.addEventListener('dragend', function(eventObject){
+ console.log(`I dropped it!`);
+  TweenMax.to(".intro h2", 2, {y:200, scale:1.25, skewX:45, rotation:180});
 });
 
 const drag = document.querySelector('.intro p');
@@ -43,14 +43,14 @@ up.addEventListener('mouseup', function(eventObject){
 
 const context = document.querySelector('.inverse-content .text-content p');
 context.addEventListener('contextmenu', function(eventObject){
- console.log(`context test`);
+ console.log(`whoa nelly!`);
   TweenMax.to(".inverse-content .text-content p", 2, {x: 100, ease: Elastic.easeOut.config(5, 0.4)});
 });
 
 const sun = document.getElementById('sun');
 sun.addEventListener('mouseleave', function(eventObject){
  console.log(`sun is sad you left him...`);
-  TweenMax.to("#sun", 1, {y: 100});
+ TweenMax.to("#sun", 2, {y: 100, ease: Elastic.easeOut.config(1.1, 0.4)});
 });
 
 const island = document.getElementById('island');
